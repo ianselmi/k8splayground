@@ -14,7 +14,7 @@ spec:
         app: app-test-1
     spec:
       containers:
-      - name: app-test-1
+      - name: app-test-1-nginx-web
         image: nginx
         ports:
         - name: web
