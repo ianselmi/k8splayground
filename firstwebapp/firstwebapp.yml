@@ -21,7 +21,7 @@ spec:
         command: ["/bin/sh", "-c"]
         args:
         - |
-          echo "<h1>Served by $(hostname)</h1>" > /usr/share/nginx/html/index.html && \
+          echo "<h1>Served by $(hostname)- IP: $(hostname -i)</h1>" > /usr/share/nginx/html/index.html && \
           nginx -g "daemon off;"
 ---
 apiVersion: v1
