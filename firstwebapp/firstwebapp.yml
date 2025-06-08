@@ -59,7 +59,8 @@ data:
 
     backend http_back
         balance roundrobin     
-        option httpchk   
+        option httpchk GET /index.html
+        http-check expect status 200  
         server nginx1 nginx-svc.app-test.svc.cluster.local:80 check
         server nginx2 nginx-svc.app-test.svc.cluster.local:80 check
 ---
