@@ -48,16 +48,20 @@ data:
         maxconn 256
 
     defaults
+        log global
         mode http
+        option log-health-checks        
+        option httplog
         timeout connect 5000ms
         timeout client 50000ms
-        timeout server 50000ms
+        timeout server 50000ms       
 
     frontend http_front
         bind *:80
         default_backend http_back
 
     backend http_back
+        option log-health-checks
         balance roundrobin     
         option httpchk GET /index.html
         http-check expect status 200  
