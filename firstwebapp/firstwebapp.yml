@@ -63,6 +63,7 @@ data:
         http-check expect status 200  
         server nginx1 nginx-svc.app-test.svc.cluster.local:80 check
         server nginx2 nginx-svc.app-test.svc.cluster.local:80 check
+        server nginx3 nginx-svc.app-test.svc.cluster.local:80 check
 ---
 apiVersion: apps/v1
 kind: Deployment
