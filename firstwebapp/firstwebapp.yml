@@ -58,7 +58,8 @@ data:
         default_backend http_back
 
     backend http_back
-        balance roundrobin        
+        balance roundrobin     
+        option httpchk   
         server nginx1 nginx-svc.app-test.svc.cluster.local:80 check
         server nginx2 nginx-svc.app-test.svc.cluster.local:80 check
 ---
